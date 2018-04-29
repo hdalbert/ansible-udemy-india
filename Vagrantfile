@@ -45,23 +45,24 @@ Vagrant.configure("2") do |config|
   config.vm.define "vagrant1" do |vagrant1|
     vagrant1.vm.box = "ubuntu/trusty64"
     config.vm.box_url = "/home/ichank/Documents/ubuntu1604"
+    vagrant1.vm.network "private_network", ip: "192.168.135.200"
     vagrant1.vm.network "forwarded_port", guest: 80, host: 8880
     vagrant1.vm.network "forwarded_port", guest: 443, host: 8443
-    vagrant1.vm.network "private_network", ip: "192.168.135.200"
   end
   config.vm.define "vagrant2" do |vagrant2|
     vagrant2.vm.box = "ubuntu/trusty64"
     config.vm.box_url = "/home/ichank/Documents/ubuntu1604"
+    vagrant2.vm.network "private_network", ip: "192.168.135.201"
     vagrant2.vm.network "forwarded_port", guest: 80, host: 8881
     vagrant2.vm.network "forwarded_port", guest: 443, host: 8444
-    vagrant2.vm.network "private_network", ip: "192.168.135.201"
+ 
   end
   config.vm.define "vagrant3" do |vagrant3|
     vagrant3.vm.box = "ubuntu/trusty64"
     config.vm.box_url = "/home/ichank/Documents/ubuntu1604"
+    vagrant3.vm.network "private_network", ip: "192.168.135.202"
     vagrant3.vm.network "forwarded_port", guest: 80, host: 8882
     vagrant3.vm.network "forwarded_port", guest: 443, host: 8445
-    vagrant3.vm.network "private_network", ip: "192.168.135.202"
   end
 
   # Provider-specific configuration so you can fine-tune various

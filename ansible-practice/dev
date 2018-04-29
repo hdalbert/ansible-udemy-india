@@ -1,0 +1,23 @@
+[webserver]
+vagrant1
+
+[appserver]
+vagrant2
+
+[dbserver]
+vagrant3
+
+[webserver:vars]
+ansible_host= 192.168.135.200
+ansible_user= vagrant
+ansible_connection= ssh
+
+[appserver:vars]
+ansible_host= 192.168.135.201
+ansible_user= vagrant
+ansible_connection= ssh
+
+[dbserver:vars]
+ansible_host= 192.168.135.202
+ansible_user= vagrant
+ansible_connection= ssh
